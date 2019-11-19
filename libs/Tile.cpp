@@ -7,8 +7,11 @@ Tile::Tile() {
     Tile::tile_type = -1;
 }
 
-Tile::Tile(int x, int y) {
-
+Tile::Tile(int x, int y, int tile_type) {
+    Tile::pos_x = x;
+    Tile::pos_y = y;
+    Tile::clicked = false;
+    Tile::tile_type = tile_type;
 }
 
 void Tile::print_tile() {

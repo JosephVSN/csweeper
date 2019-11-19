@@ -10,7 +10,7 @@ class Tile {
         int pos_y;
         void print_tile();
         Tile();
-        Tile(int x, int y);
-};
+        Tile(int x, int y, int tile_type);
+}
 
 #endif

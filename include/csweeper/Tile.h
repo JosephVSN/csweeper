@@ -11,6 +11,6 @@ class Tile {
         void print_tile();
         Tile();
         Tile(int x, int y, int tile_type);
-}
+};
 
 #endif

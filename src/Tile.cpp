@@ -1,4 +1,4 @@
-#include "../include/Tile.h"
+#include <csweeper/Tile.h>
 
 Tile::Tile() {
     Tile::clicked = false;
@@ -15,5 +15,5 @@ Tile::Tile(int x, int y, int tile_type) {
 }
 
 void Tile::print_tile() {
-    std::cout << "(" << Tile::pos_x << ", " << Tile::pos_y << ") [" << Tile::tile_type << "]" << std::endl;
+    std::cout << "[" << Tile::tile_type << "]";
 }

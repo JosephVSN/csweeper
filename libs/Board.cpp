@@ -1,4 +1,6 @@
-#include "../include/Board.h"
+#include <csweeper/Board.h>
+#include <csweeper/Game.h>
+#include <csweeper/Tile.h>
 
 Board::Board() {
     Board::width = 0;
@@ -20,7 +22,27 @@ Board::Board(int width, int height, int mines) {
 }
 
 void Board::generate() {
+    /** Generate mine squares **/
+    int placed = 0;
+    int pos_x;
+    int pos_y;
+    srand(time(NULL)); // Default to seeding with time
+    while (placed != Board::mines) {
+        pos_x = rand() % Board::width;
+        pos_y = rand() % Board::height;
+        /** Try and place our mine **/
+        if (Board::map[pos_x][pos_y]->tile_type != -1) {
+            Board::map[pos_x][pos_y]->tile_type = -1;
+            placed++;
+        }
+    }
 
+    /** Generate non-mine squares **/
+    for (int i = 0; i < Board::width; i++) {
+        for (int j = 0; j < Board::height; j++) {
+            
+        }
+    }
 }
 
 void Board::clear_board() {

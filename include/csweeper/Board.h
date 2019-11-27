@@ -1,6 +1,8 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "../Tile.h"
 
 class Board {

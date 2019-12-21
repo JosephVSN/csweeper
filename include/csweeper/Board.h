@@ -19,6 +19,7 @@ class Board {
         Board();
         Board(int width, int height, int mines);
     private:
+        int count_neighbours(int, int);
         Tile ** map;
 };
 

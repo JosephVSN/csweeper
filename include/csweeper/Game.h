@@ -9,6 +9,7 @@ class Game {
         bool won;
         Game();
         bool play();
+        void choose(int, int);
     private:
         Board game_board;
 };

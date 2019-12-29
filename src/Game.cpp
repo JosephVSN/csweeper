@@ -8,7 +8,7 @@ Game::Game() {
 
 bool Game::play() {
     Game::game_board.generate();
-    Game::game_board.print();
+    Game::game_board.print(false);
     return Game::won;
 }
 
@@ -24,12 +24,13 @@ void Game::choose(int usr_x, int usr_y) {
     }
 
     /** Try to flip the tile the user picked **/
-    if (Game::game_board[i][j].clicked == false) {
-        Game::game_board[i][j].clicked = true;
+    bool tile_clicked = Game::game_board.is_clicked(usr_x, usr_y);
+    if (!tile_clicked) {
+        Game::game_board.click(usr_x, usr_y);
         /** User selected a bomb **/
-        if (Game::game_board[i][j].tile_type == BOMB) {
+        if (Game::game_board.get_type(usr_x, usr_y) == BOMB) {
             Game::won = false;
-            Game::finishd = true;
+            Game::finished = true;
         }
     } else {
         std::cout << "Tile has already been revealed" << std::endl;

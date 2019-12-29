@@ -81,17 +81,33 @@ void Board::generate() {
     }
 }
 
-void Board::print() {
+void Board::print(bool debug) {
     /** Prints out the board **/
     if (map == nullptr) { return; }
 
     for (int i = 0; i < Board::width; i++) {
         for (int j = 0; j < Board::height; j++) {
-            Board::map[i][j].print_tile();
+            /** If debug is true, then print the tile value, otherwise only print it if it's flipped **/
+            Board::map[i][j].print_tile(debug);
             std::cout << " ";
         }
         std::cout << std::endl;
     }
+}
+
+bool Board::is_clicked(int pos_x, int pos_y) {
+    /** Getter for a tile's 'clicked' variable **/
+    return Board::map[pos_x][pos_y].clicked;
+}
+
+void Board::click(int pos_x, int pos_y) {
+    /** Setter for a tile's 'clicked' variable **/
+    Board::map[pos_x][pos_y].clicked = true;
+}
+
+int Board::get_type(int pos_x, int pos_y) {
+    /** Getter for a tile's 'type' variable **/
+    return Board::map[pos_x][pos_y].tile_type;
 }
 
 void Board::clear_board() {

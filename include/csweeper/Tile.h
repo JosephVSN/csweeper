@@ -9,7 +9,7 @@ class Tile {
         bool clicked;
         int pos_x;
         int pos_y;
-        void print_tile();
+        void print_tile(bool);
         Tile();
         Tile(int x, int y, int tile_type);
 };
